@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EO Phoenix</string>
+    <string name="app_title">EO Phoenix - by KiwiKodo</string>
+    <string name="wifi_waiting">WiFi Network: Waiting for connection...</string>
+    <string name="time_placeholder">System Time: --:--</string>
+    <string name="timezone_not_set">Time Zone: Not Set</string>
+    <string name="startup_delay">Startup Delay: 0 seconds</string>
+    <string name="media_folder_none">Media Folder: None</string>
+    <string name="media_count">Media Count: 0 files</string>
+    <string name="display_mode_not_set">Display Mode: Not Set</string>
+    <string name="slideshow_interval">Slideshow Interval: 0 seconds</string>
+    <string name="shuffle_not_set">Shuffle: Not Set</string>
+    <string name="video_settings_not_set">Video Settings: Not Set</string>
+    <string name="brightness_not_set">Screen Brightness: Not Set</string>
+    <string name="logs_label">Logs:</string>
+    <string name="logs_scroll_desc">Scroll area containing runtime logs</string>
+    <string name="log_container_desc">Log messages - latest messages appear at the top</string>
+    <!-- Formatted strings for UIManager -->
+    <string name="wifi_status_fmt">WiFi Network: %1$s %2$s</string>
+    <string name="time_info_fmt">Current Time: %1$s %2$s</string>
+    <string name="timezone_fmt">Time Zone: %1$s</string>
+    <string name="startup_delay_fmt">Startup Delay: %1$d seconds</string>
+    <string name="folder_info_fmt">Media Folder: %1$s</string>
+    <string name="media_count_fmt">Media Count: %1$d files</string>
+    <string name="slideshow_interval_fmt">Slideshow Interval: %1$d seconds</string>
+    <string name="shuffle_fmt">Shuffle: %1$s</string>
+    <string name="brightness_fmt">Screen Brightness: %1$s</string>
+    <string name="video_settings_fmt">Video Settings: %1$s | %2$s | Max Size: %3$dKB | Max Res: %4$s</string>
+    <string name="media_count_detailed_fmt">Media Count: %1$d files (%2$d images, %3$d videos, %4$d skipped)</string>
+    <string name="media_all_skipped_by_size_fmt">No usable media found: %1$d video(s) were skipped (max %2$dKB). Examples: %3$s</string>
+    <!-- MainActivity and general messages -->
+    <string name="no_sd_card">No SD card mounted - please insert SD card</string>
+    <string name="loading_settings">Loading settings...</string>
+    <string name="starting_wifi_setup">Starting WiFi setup...</string>
+    <string name="fatal_settings_not_loaded">Fatal: Settings not loaded - check settings.json</string>
+    <string name="fatal_error_startup_fmt">Fatal: Error during startup: %1$s</string>
+    <string name="stack_trace_fmt">Stack trace: %1$s</string>
+    <string name="application_started">Application started</string>
+
+    <!-- MediaManager -->
+    <string name="starting_media_scan">Starting media scan...</string>
+    <string name="error_media_dir_not_found_fmt">Error: Media directory not found: %1$s</string>
+
+    <!-- SettingsManager -->
+    <string name="settings_loaded_successfully">Settings loaded successfully from SD card</string>
+    <string name="fatal_settings_parse">Fatal: Settings file could not be parsed</string>
+    <string name="fatal_settings_validation_failed">Fatal: Settings validation failed</string>
+</resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Variables Section -->
+    <LinearLayout
+        android:id="@+id/variablesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/noSdMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_sd_card"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/wifiStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/wifi_waiting"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/timeInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/time_placeholder"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/timezoneInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/timezone_not_set"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/startupInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/startup_delay"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/folderInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/media_folder_none"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/mediaInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/media_count"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/slideshowInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/slideshow_interval"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/shuffleInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shuffle_not_set"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/videoSettingsInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/video_settings_not_set"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/brightnessInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/brightness_not_set"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Log Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logs_label"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:contentDescription="@string/logs_scroll_desc"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:id="@+id/logContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:accessibilityLiveRegion="polite"
+            android:importantForAccessibility="yes"
+            android:contentDescription="@string/log_container_desc" />
+    </ScrollView>
+</LinearLayout>

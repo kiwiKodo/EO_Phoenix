@@ -1,0 +1,124 @@
+This document lists all `settings.json` keys used by EoPhoenix, their default values, recommended ranges, and a short description for each.
+
+Format:
+- key (type) — default: <value> — recommended range: <range>
+  Short description and how it affects behavior.
+
+---
+
+wifiSSID (string) — default: null — recommended: valid SSID string
+- The SSID used to connect the device to WiFi during startup. Required for WiFi operations.
+
+wifiPassword (string) — default: null — recommended: 8-63 chars for WPA
+- Pre-shared key for the `wifiSSID`. Used to create a WPA_PSK WifiConfiguration.
+
+wifiMaxAttempts (int) — default: 15 — recommended: 1..60
+- Number of connection-status polling attempts before the system declares connection failure.
+- Each attempt uses `wifiAttemptDelay` ms between checks.
+
+wifiAttemptDelay (int ms) — default: 1000 — recommended: 200..10000
+- Milliseconds between connection-status attempts when retrying to see if the device obtained an IP.
+
+wifiEnableDelay (int ms) — default: 3000 — recommended: 500..20000
+- Initial delay used when enabling WiFi before we begin polling the WiFi state machine.
+
+wifiEnableBaseWaitMs (int ms) — default: 1500 — recommended: 500..5000
+- Base wait used in code before starting to poll for WiFi state. Tunable for slower radios.
+
+wifiEnableMaxMultiplier (int) — default: 4 — recommended: 1..10
+- Multiplier applied to base wait to compute an upper bound for waiting for WiFi to become ENABLED.
+
+wifiEnableMinMaxWaitMs (int ms) — default: 3000 — recommended: 1000..60000
+- Minimum enforced upper bound for WiFi enable waiting logic. Prevents too-small caps.
+
+wifiStatePollIntervalMs (int ms) — default: 500 — recommended: 100..5000
+- Poll interval while waiting for the WiFi state to change to ENABLED.
+
+wifiEnablingExtraGraceMs (int ms) — default: 10000 — recommended: 0..60000
+- Extra grace period to wait (when WiFi state is ENABLING) before proceeding with best-effort configuration.
+
+wifiEnablingExtraPollMs (int ms) — default: 1000 — recommended: 200..5000
+- Poll interval used during the extra grace period.
+
+addNetworkPostDelayMs (int ms) — default: 400 — recommended: 0..5000
+- Initial scheduling delay before the first call to `WifiManager.addNetwork(conf)`; helps avoid transient -1 errors.
+
+addNetworkMaxAttempts (int) — default: 6 — recommended: 1..20
+- Number of attempts to call `addNetwork` before giving up.
+
+addNetworkBaseRetryMs (int ms) — default: 400 — recommended: 100..2000
+- Base value used in exponential backoff for addNetwork retries.
+
+addNetworkMaxRetryMs (int ms) — default: 3000 — recommended: 500..10000
+- Maximum cap for the addNetwork retry delay.
+
+timeSyncDelay (int ms) — default: 3000 — recommended: 1000..60000
+- Delay after connection before updating UI and tearing down WiFi; allows time sync to occur.
+
+timeZone (string) — default: device locale timezone — recommended: valid IANA timezone name
+- Timezone to request/set on the device when allowed by permissions.
+
+startupDelay (int seconds) — default: 10 — recommended: 0..120
+- Delay (seconds) before the app starts slideshow or other heavy work; used for staged startup.
+
+logRotationSizeBytes (int) — default: 10485760 (10MB) — recommended: 1048576..52428800 (1MB..50MB)
+- Maximum size of `eophoenix.log` before rotation occurs.
+
+logBufferLines (int) — default: 500 — recommended: 50..5000
+- Number of UI/file log lines to keep in memory for buffering before writing to disk.
+
+logRotationRetention (int) — default: 3 — recommended: 1..20
+- Number of rotated log archives to retain.
+
+logRotationCompress (bool) — default: true — recommended: true
+- Whether rotated log files should be compressed.
+
+sdWaitMaxAttempts (int) — default: 5 — recommended: 1..60
+- Number of times the app will poll for a removable SD root before giving up (at startup).
+
+sdWaitDelayMs (int ms) — default: 2000 — recommended: 200..60000
+- Milliseconds between SD detection polls.
+
+folder (string) — default: "Photos" — recommended: existing folder name on SD
+- Subfolder on the EoPhoenix media root to show in slideshow.
+slideshowDelay (int seconds) — default: 10 — recommended: 1..3600
+- Delay between slideshow transitions in seconds.
+
+shuffle (bool) — default: true
+- Whether to randomize slideshow order.
+
+loopVideos (bool) — default: false
+- Loop videos when playing.
+
+allowFullLengthVideos (bool) — default: true
+- Whether the app will play videos in full length or truncate to slideshow timings.
+
+maxVideoSizeKB (int) — default: 4096 — recommended: 1024..65536
+- Maximum allowed video file size in KB.
+
+maxVideoPixels (int) — default: 2073600 (e.g., 1920x1080) — recommended: depends on device
+- Maximum pixel count for video decoding (width*height).
+
+brightness (string) — default: "" — recommended: "0".."255" or empty to leave unchanged
+- Device brightness override.
+
+schedule (object) — default: none — recommended: valid day/time slots
+- Weekly schedule for turning the slideshow on/off; see example in settings.json
+
+Crash policy fields (crashWindowMs, crashMaxCount, crashBackoffBaseMs)
+- crashWindowMs (int ms) — default: 1800000 (30 minutes) — recommended: 5min..24h
+- crashMaxCount (int) — default: 3 — recommended: 1..50
+- crashBackoffBaseMs (int ms) — default: 2000 — recommended: 1000..60000
+- Used by CrashManager to decide when to attempt restart vs backoff.
+
+---
+
+Notes:
+- All numerical values in settings.json are validated when loaded; invalid or out-of-range values are coerced to safe defaults and a log entry is emitted.
+- When tuning these values in the field, change only one parameter at a time and observe logs for behavior changes.
+- The most commonly tuned values are `wifiEnableBaseWaitMs`, `addNetworkMaxAttempts`, and `addNetworkBaseRetryMs` for devices with slow WiFi radios.
+
+Storage and diagnostics policy:
+- All on-device persistent diagnostics and operator-facing status must be written only to the removable EoPhoenix directory when available. The canonical log file is `EoPhoenix/eophoenix.log`.
+- During early startup or when removable storage is unavailable, short status messages are buffered in-memory via `LogManager.addPendingFileLog(...)` and flushed later by the background flusher to `eophoenix.log` in chronological order.
+- Direct, ad-hoc file writes (for example using `FileWriter` straight from Activities or BroadcastReceivers) are deprecated. Use `LogManager.addPendingFileLog(...)` to ensure a single, consistent writer handles SD I/O and rotation.
