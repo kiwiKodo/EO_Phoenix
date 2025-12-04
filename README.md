@@ -1,0 +1,132 @@
+# EO Phoenix - Android Photo Frame App
+
+Android slideshow application for the EO2 Photo Frame device, designed to display photos and videos on a schedule.
+
+## Features
+
+- 📸 **Photo & Video Slideshow** - Display images and videos from SD card
+- ⏰ **Scheduled Display** - Automatic on/off times with daily or weekly schedules
+- 🌓 **Brightness Control** - Auto-adjust brightness or set manual levels
+- 🎞️ **Media Management** - Supports images (JPG, PNG) and videos (MP4, AVI, MKV)
+- 📊 **Activity Logging** - Track app behavior and errors
+- 🔄 **Auto-Recovery** - Automatic restart on crashes
+- 📱 **Admin Mode** - Device administrator privileges for kiosk functionality
+
+## Download
+
+Download the latest APK from [Releases](https://github.com/kiwiKodo/EO_Phoenix/releases/latest)
+
+## Installation
+
+### Sideload via Bluetooth (Recommended for EO2 Frame)
+1. Download the APK to your computer
+2. Use the [EO Phoenix Editor](https://github.com/kiwiKodo/EO_Phoenix-Editor) desktop app
+3. Connect via Bluetooth and sideload the APK
+
+### Direct Installation
+1. Download the APK to your Android device
+2. Enable "Install from Unknown Sources" in Settings
+3. Open the APK file to install
+
+## Configuration
+
+The app is designed to work with the **EO Phoenix Editor** desktop application:
+
+1. Create settings and prepare media using [EO Phoenix Editor](https://github.com/kiwiKodo/EO_Phoenix-Editor)
+2. Copy the `eo-settings.json` file and media folders to the device's SD card
+3. Insert the SD card into the EO2 Photo Frame
+4. The app will automatically load settings and start the slideshow
+
+### Settings File Location
+- **Default**: `/storage/sdcard1/eo-settings.json`
+- The app looks for settings on the external SD card
+
+### Media Folders
+- Place photos in: `/storage/sdcard1/photos/`
+- Place videos in: `/storage/sdcard1/videos/`
+
+## Requirements
+
+- **Android Version**: 4.4 (KitKat) or higher
+- **Target Device**: Optimized for EO2 Photo Frame (1024x600 resolution)
+- **Storage**: External SD card required for media and settings
+
+## Permissions
+
+The app requires the following permissions:
+- **Storage**: Read media files from SD card
+- **Device Admin**: Maintain kiosk mode and prevent accidental exits
+- **Wake Lock**: Keep screen on during slideshow
+
+## Building from Source
+
+### Prerequisites
+- Android Studio Arctic Fox or later
+- JDK 17 or higher
+- Android SDK with API 34
+
+### Build Steps
+```bash
+# Clone the repository
+git clone https://github.com/kiwiKodo/EO_Phoenix.git
+cd EO_Phoenix
+
+# Build debug APK
+./gradlew assembleDebug
+
+# Build release APK (requires keystore)
+./gradlew assembleRelease
+```
+
+The APK will be generated in `app/build/outputs/apk/`
+
+## Development
+
+### Project Structure
+```
+app/src/main/
+├── java/com/kiwikodo/eophoenix/
+│   ├── MainActivity.java          # Main activity and slideshow logic
+│   ├── Settings.java              # Settings data model
+│   ├── managers/                  # Feature managers
+│   │   ├── MediaManager.java      # Media loading and playback
+│   │   ├── ScheduleManager.java   # Schedule handling
+│   │   ├── BrightnessManager.java # Brightness control
+│   │   └── ...
+│   └── services/                  # Background services
+└── res/                           # Resources and layouts
+```
+
+### Key Technologies
+- **ExoPlayer 2.18.7** - Video playback
+- **AndroidX** - Modern Android components
+- **Gson** - JSON parsing for settings
+
+## Troubleshooting
+
+### App doesn't start slideshow
+- Check that `eo-settings.json` exists on the SD card
+- Verify media files are in the correct folders
+- Check logs in `/storage/sdcard1/eo-logs.txt`
+
+### Videos don't play
+- Ensure videos are in supported formats (MP4, H.264)
+- Check that video files aren't corrupted
+- Verify SD card has sufficient read speed
+
+### Schedule not working
+- Confirm schedule is properly configured in settings
+- Check device time and timezone settings
+- Review logs for schedule-related errors
+
+## Related Projects
+
+- **[EO Phoenix Editor](https://github.com/kiwiKodo/EO_Phoenix-Editor)** - Desktop app for configuring settings and managing media
+
+## License
+
+This project is provided as-is for use with EO2 Photo Frame devices.
+
+## Support
+
+For issues, questions, or contributions, please visit the [Issues](https://github.com/kiwiKodo/EO_Phoenix/issues) page.
