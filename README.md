@@ -31,17 +31,16 @@ The app is designed to work with the **EO Phoenix Editor** desktop application:
 4. The app will automatically load settings and start the slideshow
 
 ### Settings File Location
-- **Default**: `/storage/sdcard1/eo-settings.json`
-- The app looks for settings on the external SD card
-
-### Media Folders
-### Settings File Location
 - **Default**: `/SD card/EoPhoenix/eo-settings.json`
 - The app looks for settings on the external SD card
 
-### Media Folders
-- Place photos in: `/SD card/EoPhoenix/photos/`
-- Place videos in: `/SD card/EoPhoenix/videos/`Frame (1024x600 resolution)
+### Media Folder
+- Place photos and videos in: `/SD card/EoPhoenix/Media Folder/`
+
+## Requirements
+
+- **Android Version**: 4.4 (KitKat) or higher
+- **Target Device**: Optimized for EO2 Photo Frame (1024x600 resolution)
 - **Storage**: External SD card required for media and settings
 
 ## Permissions
@@ -99,7 +98,7 @@ app/src/main/
 
 ### App doesn't start slideshow
 - Check that `eo-settings.json` exists at `/SD card/EoPhoenix/eo-settings.json`
-- Verify media files are in the correct folders
+- Verify media files are in `/SD card/EoPhoenix/Media Folder/`
 - Check logs in `/SD card/EoPhoenix/eo-logs.txt`
 
 ### Videos don't play
