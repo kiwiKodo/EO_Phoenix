@@ -5,12 +5,10 @@ Android slideshow application for the EO2 Photo Frame device, designed to displa
 ## Features
 
 - 📸 **Photo & Video Slideshow** - Display images and videos from SD card
-- ⏰ **Scheduled Display** - Automatic on/off times with daily or weekly schedules
-- 🌓 **Brightness Control** - Auto-adjust brightness or set manual levels
+- ⏰ **Scheduled Display** - Automatic on/off times with daily schedules
+- 🌓 **Brightness Control** - Manual brightness level control
 - 🎞️ **Media Management** - Supports images (JPG, PNG) and videos (MP4, AVI, MKV)
 - 📊 **Activity Logging** - Track app behavior and errors
-- 🔄 **Auto-Recovery** - Automatic restart on crashes
-- 📱 **Admin Mode** - Device administrator privileges for kiosk functionality
 
 ## Download
 
@@ -22,11 +20,6 @@ Download the latest APK from [Releases](https://github.com/kiwiKodo/EO_Phoenix/r
 1. Download the APK to your computer
 2. Use the [EO Phoenix Editor](https://github.com/kiwiKodo/EO_Phoenix-Editor) desktop app
 3. Connect via Bluetooth and sideload the APK
-
-### Direct Installation
-1. Download the APK to your Android device
-2. Enable "Install from Unknown Sources" in Settings
-3. Open the APK file to install
 
 ## Configuration
 
@@ -42,13 +35,13 @@ The app is designed to work with the **EO Phoenix Editor** desktop application:
 - The app looks for settings on the external SD card
 
 ### Media Folders
-- Place photos in: `/storage/sdcard1/photos/`
-- Place videos in: `/storage/sdcard1/videos/`
+### Settings File Location
+- **Default**: `/SD card/EoPhoenix/eo-settings.json`
+- The app looks for settings on the external SD card
 
-## Requirements
-
-- **Android Version**: 4.4 (KitKat) or higher
-- **Target Device**: Optimized for EO2 Photo Frame (1024x600 resolution)
+### Media Folders
+- Place photos in: `/SD card/EoPhoenix/photos/`
+- Place videos in: `/SD card/EoPhoenix/videos/`Frame (1024x600 resolution)
 - **Storage**: External SD card required for media and settings
 
 ## Permissions
@@ -105,9 +98,9 @@ app/src/main/
 ## Troubleshooting
 
 ### App doesn't start slideshow
-- Check that `eo-settings.json` exists on the SD card
+- Check that `eo-settings.json` exists at `/SD card/EoPhoenix/eo-settings.json`
 - Verify media files are in the correct folders
-- Check logs in `/storage/sdcard1/eo-logs.txt`
+- Check logs in `/SD card/EoPhoenix/eo-logs.txt`
 
 ### Videos don't play
 - Ensure videos are in supported formats (MP4, H.264)
