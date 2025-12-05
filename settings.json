@@ -20,8 +20,8 @@
     "startupDelay": 5
   },
   "slideshow": {
-    "folder": "Media Folder",
-    "slideshowDelay": 1800,
+    "folder": "Media Folder Name",
+    "slideshowDelay": 30,
     "shuffle": true,
     "loopVideos": true,
     "allowFullLengthVideos": true,
@@ -37,18 +37,19 @@
   },
   "system": {
     "sdWaitMaxAttempts": 5,
-    "sdWaitDelayMs": 2000,
-    "rotateDirection": "clockwise"
-  },
-  "captions": {
-    "fontSize": 24,
-    "width": 300,
-    "padding": 12,
-    "shrinkToFit": true,
-    "style": "boxed"
+    "sdWaitDelayMs": 2000
   },
   "schedule": {
-    "monday": [],
+    "monday": [
+      {
+        "on": "07:00",
+        "off": "09:00"
+      },
+      {
+        "on": "17:30",
+        "off": "22:45"
+      }
+    ],
     "tuesday": [],
     "wednesday": [],
     "thursday": [],

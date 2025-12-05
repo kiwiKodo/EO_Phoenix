@@ -30,7 +30,7 @@ The app is designed to work with the **EO Phoenix Editor** desktop application (
 3. Insert the SD card into the EO2 Photo Frame
 4. The app will automatically load settings and start the slideshow
 
-If you don't use the EO Phoenix Editor to create the settings.json, you must download and manually edit the [default-settings.json](https://github.com/kiwiKodo/EO_Phoenix/blob/master/default-settings.json) from this repo
+If you don't use the EO Phoenix Editor to create the settings.json, you must download and manually edit the [settings.json](https://github.com/kiwiKodo/EO_Phoenix/blob/master/settings.json) from this repo
 
 ### Settings File Location
 - **Default**: `/SD card/EoPhoenix/settings.json`
