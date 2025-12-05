@@ -1,18 +1,60 @@
 {
-  "displayDuration": 60,
-  "transitionStyle": "fade",
-  "showCaptions": false,
-  "captionPosition": "bottom",
-  "captionFontSize": 16,
-  "captionColor": "#FFFFFF",
-  "scheduleOn": "08:00",
-  "scheduleOff": "22:00",
-  "brightness": 128,
-  "mediaFolders": [
-    "Media Folder"
-  ],
-  "videoEnabled": true,
-  "videoVolume": 0,
-  "shuffleMedia": false,
-  "orientation": "landscape"
+  "wifi": {
+    "wifiSSID": "",
+    "wifiPassword": "",
+    "wifiMaxAttempts": 15,
+    "wifiAttemptDelay": 1000,
+    "wifiEnableDelay": 3000,
+    "wifiEnableBaseWaitMs": 1500,
+    "wifiEnableMaxMultiplier": 4,
+    "wifiEnableMinMaxWaitMs": 3000,
+    "wifiStatePollIntervalMs": 500,
+    "wifiEnablingExtraGraceMs": 10000,
+    "wifiEnablingExtraPollMs": 1000,
+    "addNetworkPostDelayMs": 400,
+    "addNetworkMaxAttempts": 6,
+    "addNetworkBaseRetryMs": 400,
+    "addNetworkMaxRetryMs": 3000,
+    "timeZone": "Pacific/Auckland",
+    "timeSyncDelay": 3000,
+    "startupDelay": 5
+  },
+  "slideshow": {
+    "folder": "Media Folder",
+    "slideshowDelay": 1800,
+    "shuffle": true,
+    "loopVideos": true,
+    "allowFullLengthVideos": true,
+    "maxVideoSizeKB": 4096,
+    "maxVideoPixels": 2073600,
+    "brightness": "7"
+  },
+  "logging": {
+    "logRotationSizeBytes": 10485760,
+    "logBufferLines": 500,
+    "logRotationRetention": 3,
+    "logRotationCompress": true
+  },
+  "system": {
+    "sdWaitMaxAttempts": 5,
+    "sdWaitDelayMs": 2000,
+    "rotateDirection": "clockwise"
+  },
+  "captions": {
+    "fontSize": 24,
+    "width": 300,
+    "padding": 12,
+    "shrinkToFit": true,
+    "style": "boxed"
+  },
+  "schedule": {
+    "monday": [],
+    "tuesday": [],
+    "wednesday": [],
+    "thursday": [],
+    "friday": [],
+    "saturday": [],
+    "sunday": []
+  },
+  "alwaysOn": false
 }
