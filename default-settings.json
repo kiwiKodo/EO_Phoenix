@@ -1,0 +1,18 @@
+{
+  "displayDuration": 60,
+  "transitionStyle": "fade",
+  "showCaptions": false,
+  "captionPosition": "bottom",
+  "captionFontSize": 16,
+  "captionColor": "#FFFFFF",
+  "scheduleOn": "08:00",
+  "scheduleOff": "22:00",
+  "brightness": 128,
+  "mediaFolders": [
+    "Media Folder"
+  ],
+  "videoEnabled": true,
+  "videoVolume": 0,
+  "shuffleMedia": false,
+  "orientation": "landscape"
+}

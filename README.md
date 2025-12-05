@@ -23,15 +23,17 @@ Download the latest APK from [Releases](https://github.com/kiwiKodo/EO_Phoenix/r
 
 ## Configuration
 
-The app is designed to work with the **EO Phoenix Editor** desktop application:
+The app is designed to work with the **EO Phoenix Editor** desktop application (but is not required):
 
-1. Create settings and prepare media using [EO Phoenix Editor](https://github.com/kiwiKodo/EO_Phoenix-Editor)
-2. Copy the `eo-settings.json` file and media folders to the device's SD card
+1. Follow the setup instructions in the [EO Phoenix Editor](https://github.com/kiwiKodo/EO_Phoenix-Editor)
+2. Copy the `settings.json` file and media folders to the device's SD card
 3. Insert the SD card into the EO2 Photo Frame
 4. The app will automatically load settings and start the slideshow
 
+If you don't use the EO Phoenix Editor to create the settings.json, you must download and manually edit the [default-settings.json](https://github.com/kiwiKodo/EO_Phoenix/blob/master/default-settings.json) from this repo
+
 ### Settings File Location
-- **Default**: `/SD card/EoPhoenix/eo-settings.json`
+- **Default**: `/SD card/EoPhoenix/settings.json`
 - The app looks for settings on the external SD card
 
 ### Media Folder
@@ -97,7 +99,7 @@ app/src/main/
 ## Troubleshooting
 
 ### App doesn't start slideshow
-- Check that `eo-settings.json` exists at `/SD card/EoPhoenix/eo-settings.json`
+- Check that `settings.json` exists at `/SD card/EoPhoenix/settings.json`
 - Verify media files are in `/SD card/EoPhoenix/Media Folder/`
 - Check logs in `/SD card/EoPhoenix/eo-logs.txt`
 
