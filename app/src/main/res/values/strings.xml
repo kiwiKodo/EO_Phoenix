@@ -9,7 +9,7 @@
     <string name="media_folder_none">Media Folder: None</string>
     <string name="media_count">Media Count: 0 files</string>
     <string name="display_mode_not_set">Display Mode: Not Set</string>
-    <string name="slideshow_interval">Slideshow Interval: 0 seconds</string>
+    <string name="slideshow_interval">Slideshow Interval: 0 minutes</string>
     <string name="shuffle_not_set">Shuffle: Not Set</string>
     <string name="video_settings_not_set">Video Settings: Not Set</string>
     <string name="brightness_not_set">Screen Brightness: Not Set</string>
@@ -23,7 +23,7 @@
     <string name="startup_delay_fmt">Startup Delay: %1$d seconds</string>
     <string name="folder_info_fmt">Media Folder: %1$s</string>
     <string name="media_count_fmt">Media Count: %1$d files</string>
-    <string name="slideshow_interval_fmt">Slideshow Interval: %1$d seconds</string>
+    <string name="slideshow_interval_fmt">Slideshow Interval: %1$d minutes</string>
     <string name="shuffle_fmt">Shuffle: %1$s</string>
     <string name="brightness_fmt">Screen Brightness: %1$s</string>
     <string name="video_settings_fmt">Video Settings: %1$s | %2$s | Max Size: %3$dKB | Max Res: %4$s</string>

@@ -11,8 +11,8 @@ android {
         minSdk 19
         targetSdk 34
         maxSdk 19  // Keeping this since it's specifically for a KitKat photo frame
-        versionCode 3
-        versionName "1.1.1"
+        versionCode 4
+        versionName "1.1.2"
     }
 
     signingConfigs {
