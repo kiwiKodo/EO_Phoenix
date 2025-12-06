@@ -262,7 +262,8 @@ public class SlideshowManager {
                 // Skip to next media only if we're not playing a full-length video
                 if (!isPlayingFullLengthVideo) {
                     displayNextMedia();
-                    int delay = settingsManager.getCurrentSettings().getSlideshowDelay() * 1000;
+                    // Convert from minutes to milliseconds: minutes * 60 seconds/minute * 1000 ms/second
+                    int delay = settingsManager.getCurrentSettings().getSlideshowDelay() * 60 * 1000;
                     slideshowHandler.postDelayed(this, delay);
                 } else {
                     // If we're playing a full-length video, the video completion handler
@@ -467,7 +468,8 @@ public class SlideshowManager {
     private void displayVideo(MediaFile mediaFile) {
         try {
             String filePath = mediaFile.getFile().getAbsolutePath();
-            final int slideshowDelay = settingsManager.getCurrentSettings().getSlideshowDelay() * 1000;
+            // Convert from minutes to milliseconds: minutes * 60 seconds/minute * 1000 ms/second
+            final int slideshowDelay = settingsManager.getCurrentSettings().getSlideshowDelay() * 60 * 1000;
             final boolean shouldLoopVideos = settingsManager.getCurrentSettings().isLoopVideos();
             final boolean allowFullLengthVideos = settingsManager.getCurrentSettings().isAllowFullLengthVideos();
             

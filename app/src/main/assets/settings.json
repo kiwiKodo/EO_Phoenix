@@ -1,0 +1,79 @@
+{
+  "wifiSSID": "",
+  "wifiPassword": "",
+  "wifiMaxAttempts": 15,
+  "wifiAttemptDelay": 1000,
+  "wifiEnableDelay": 3000,
+  "wifiEnableBaseWaitMs": 1500,
+  "wifiEnableMaxMultiplier": 4,
+  "wifiEnableMinMaxWaitMs": 3000,
+  "wifiStatePollIntervalMs": 500,
+  "wifiEnablingExtraGraceMs": 10000,
+  "wifiEnablingExtraPollMs": 1000,
+  "addNetworkPostDelayMs": 400,
+  "addNetworkMaxAttempts": 6,
+  "addNetworkBaseRetryMs": 400,
+  "addNetworkMaxRetryMs": 3000,
+  "timeZone": "Pacific/Auckland",
+  "timeSyncDelay": 3000,
+  "startupDelay": 15,
+  "folder": "Portrait",
+  "slideshowDelay": 30,
+  "shuffle": true,
+  "loopVideos": true,
+  "allowFullLengthVideos": true,
+  "maxVideoSizeKB": 4096,
+  "maxVideoPixels": 2073600,
+  "brightness": "7",
+  "logRotationSizeBytes": 10485760,
+  "logBufferLines": 500,
+  "logRotationRetention": 3,
+  "logRotationCompress": true,
+  "sdWaitMaxAttempts": 5,
+  "sdWaitDelayMs": 2000,
+  "schedule": {
+    "monday": [
+      {
+        "on": "00:00",
+        "off": "24:00"
+      }
+    ],
+    "tuesday": [
+      {
+        "on": "00:00",
+        "off": "24:00"
+      }
+    ],
+    "wednesday": [
+      {
+        "on": "00:00",
+        "off": "24:00"
+      }
+    ],
+    "thursday": [
+      {
+        "on": "00:00",
+        "off": "24:00"
+      }
+    ],
+    "friday": [
+      {
+        "on": "00:00",
+        "off": "24:00"
+      }
+    ],
+    "saturday": [
+      {
+        "on": "00:00",
+        "off": "24:00"
+      }
+    ],
+    "sunday": [
+      {
+        "on": "00:00",
+        "off": "24:00"
+      }
+    ]
+  },
+  "alwaysOn": true
+}
