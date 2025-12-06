@@ -140,11 +140,10 @@ public class BrightnessManager {
                 }
                 
                 // 4. Apply to views - IMPROVED APPROACH FOR THIS DEVICE
-                // For this specific device, we need to boost the alpha values
+                // Allow full brightness range without artificial floor
                 if (imageView != null) {
-                    // Boost image brightness - never go below 0.4 for visibility
-                    float imageAlpha = 0.4f + (normalizedBrightness * 0.6f);
-                    imageView.setAlpha(imageAlpha);
+                    // Use full brightness range for better dimming control
+                    imageView.setAlpha(normalizedBrightness);
                 }
                 
                 // For videos we use an overlay to control perceived brightness because
@@ -245,9 +244,9 @@ public class BrightnessManager {
                 brightnessLevel = 5;
             }
             
-            // FIXED: Exact conversion from 1-10 scale to 0.0-1.0 scale
-            float normalizedBrightness = 0.1f + ((brightnessLevel - 1) / 9.0f * 0.9f);
-            // float normalizedBrightness = (brightnessLevel - 1) / 9.0f;
+            // Convert 1-10 scale to 0.0-1.0 scale with full range
+            // Level 1 = 0.0 (0%), Level 10 = 1.0 (100%)
+            float normalizedBrightness = (brightnessLevel - 1) / 9.0f;
             setBrightnessNormalized(normalizedBrightness, false);
             
             stopAutoBrightness();
